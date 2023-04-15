@@ -349,7 +349,7 @@ def calc_V_effective(U_charge, U_spin, CHI0, CHI_charge, CHI_spin):
           1.5*np.matmul(U_spin, np.matmul(CHI_spin, U_spin)) \
         + 0.5*np.matmul(U_charge, np.matmul(CHI_charge, U_charge)) \
         - np.matmul(U_M, np.matmul(CHI0, U_M)) \
-        + 0.5*(U_charge - U_spin)
+        - 0.5*U_charge + 1.5*U_spin
     # shape: (2*Nm,Nqx,Nqy,Nqz,Norbit^2,Norbit^2)
     return V_Sigma
 
